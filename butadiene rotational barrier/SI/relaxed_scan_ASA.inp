@@ -1,0 +1,92 @@
+#--------------------------------------------------
+Example input file
+#--------------------------------------------------
+
+Input file = relaxed_scan.xyz
+
+Job name = butadiene_relaxed_scan
+
+#--------------------------------------------------
+Information on Structures
+#--------------------------------------------------
+
+charge = 0
+multiplicity = 1
+
+Fragment1 name = frag1
+Fragment1 charge = 0
+Fragment1 multiplicity = 2
+Fragment1 atoms = 1 2 8 9 10
+Fragment1 energy = 0
+
+Fragment2 name = frag2
+Fragment2 charge = 0
+Fragment2 multiplicity = 2
+Fragment2 atoms = 3 4 5 6 7
+Fragment2 energy = 0
+
+#--------------------------------------------------
+Information for Analysis
+#--------------------------------------------------
+
+Analysis = YES
+
+<distances>
+</distances>
+
+<angles>
+</angles>
+
+<dihedral>
+1 2 3 4
+</dihedral>
+
+#--------------------------------------------------
+Further Settings
+#--------------------------------------------------
+
+Keep xyz = NO
+Keep input files = YES
+Keep output files = YES
+Keep log file = YES
+
+reorder = NO
+
+Reduce structures = NO
+RMSD treshold = 0.2
+
+Prepare only = NO
+
+#--------------------------------------------------
+Input File Structure
+#--------------------------------------------------
+
+<layout>
+
+molecule mol {
+$charge $multiplicity
+$coordinates
+}
+
+set scf_type df
+set basis aug-cc-pVTZ
+set reference uks
+
+
+e, wfn = energy('b3lyp', return_wfn=True)
+oeprop(wfn, "MULLIKEN_CHARGES")
+mol.print_out()
+print_variables()
+
+</layout>
+
+#--------------------------------------------------
+Input File Structure
+#--------------------------------------------------
+
+<run_job>
+/home/psi4_run/psi4 $input $output
+</run_job>
+
+input file extension = inp
+output file extension = out
