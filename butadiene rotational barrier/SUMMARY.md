@@ -62,6 +62,7 @@ $E_{int}$ 자체에 local minima가 없기에 EDA 계산이 local minima에 대�
 
 
 분해된 EDA 텀들을 제외하고 모두 plot한 그래프다.
+
 ![all](https://github.com/kangmg/compchem_archive/assets/59556369/345bb482-ea0c-412c-b16c-6b0df3e292bf)
 
 
