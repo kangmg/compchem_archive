@@ -1,5 +1,7 @@
 # [Butadiene의 dihedral rotational barrier를 EDA로 분석해보기]
 
+![butadiene](https://github.com/kangmg/compchem_archive/assets/59556369/5f63a655-c6cf-45e7-9955-836c708bd7df)
+
 <br/>
 
 ### 프로젝트 설명
