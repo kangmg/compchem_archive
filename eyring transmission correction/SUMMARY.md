@@ -42,15 +42,17 @@ $$
 
 ## 반응 시스템
 
-1. 위에서 언급한 atropisomer의 interconversion 시스템
+1. 위에서 언급한 약물 후보 분자(atropisomer)의 interconversion
 
-2. ClFHP 분자의 configurational inversion
+2. NHFCl 분자의 configurational inversion
+
+3. ClFHP 분자의 configurational inversion
 
 <br/>
 
 ## 계산 결과 요약 
 
-위 atrompisomer 의 interconversion은 TS에서 Imaginary Vibrational Frequency가 매우 작아서 transmission correaction을 해도 거의 1에 가까운 kappa_wigner 값이 나왔다. 
+위 atrompisomer 의 interconversion은 TS에서 Imaginary Vibrational Frequency가 매우 작아서 transmission correaction을 해도 거의 1에 가까운 kappa_wigner 값이 나왔다.
 ```
 # atropisomer의 interconversion kinetics
 # Vibrational Frequency : HF-3c
@@ -84,10 +86,10 @@ Temperature       kappa_wig         k_eyring              dacay time (50.0 %)
 500.00            1.0000            4.7866E-11            459.0 years 2 months
 ```
 
-반면에 NHFCl의 경우 상온에서 ~10에서 ~10^2 sec 정도의 반감기를 보였고 사실상 쉽게 inversion됨을 의미한다.
+반면에 NHFCl의 경우 상온에서 ~10에서 ~10^2 sec 정도의 반감기를 보였고 사실상 쉽게 inversion됨을 의미한다. 하물며 correction을 적용하지 않았을 때보다 약 2배 빠르게 반응이 진행됨을 의미한다.
 ```
 # NHFCl의 pyramidal inversion kinetics
-# Vibrational Frequency / Single point : CCSD/cc-pVTZ
+# Vibrational Frequency / Single point : RCCSD-FC/CC-pVTZ
 
 Temperature       kappa_wig         k_eyring              dacay time (50.0 %)
 ----------------------------------------------------------------------------------------------
@@ -145,12 +147,57 @@ TEMPERATURE      kappa_wigner     kappa_skodje     kappa_eckart     k_wiger     
 390.00           1.6448           2.1320           2.0620           1.2971E+02           1.6813E+02           1.6261E+02           7.8859E+01      
 400.00           1.6130           2.0392           1.9809           2.4592E+02           3.1091E+02           3.0202E+02           1.5247E+02 
 ```
+아래는 ClFHP 분자의 pyramidal inversion에 대한 kinetics 계산 결과이고, interconversion이 일어나지 않는다고 예측할 수 있다.
+```
+# 의 pyramidal inversion kinetics
+# Vibrational Frequency / Single point : RCCSD-FC/def2SVP
 
+Temperature       kappa_wig         k_eyring              dacay time (50.0 %)
+----------------------------------------------------------------------------------------------
+273.15            2.5800            1.7906E-52            1.2275238061825334e+44 years 2 months
+280.00            2.5000            6.8987E-51            3.1860577854434195e+42 years 10 months
+290.00            2.4000            1.0462E-48            2.100961014328975e+40 years 1 months
+293.15            2.3700            4.7406E-48            4.63644785678125e+39 years 2 months
+298.15            2.3200            4.8874E-47            4.497142084871863e+38 years 2 months
+300.00            2.3100            1.1362E-46            1.9345010741951993e+38 years 11 months
+310.00            2.2200            9.1275E-45            2.4080665916128527e+36 years 23 days
+320.00            2.1500            5.5794E-43            3.9394449601675448e+34 years 14 days
+330.00            2.0800            2.6604E-41            8.261850307877308e+32 years 8 months
+340.00            2.0200            1.0114E-39            2.1730761241822816e+31 years 8 months
+350.00            1.9600            3.1262E-38            7.030668885086743e+29 years 11 months
+360.00            1.9100            7.9923E-37            2.750102833096588e+28 years 5 months
+370.00            1.8600            1.7162E-35            1.2807052802207063e+27 years 5 months
+380.00            1.8100            3.1383E-34            7.003561257905384e+25 years 7 months
+390.00            1.7700            4.9480E-33            4.4421512935111147e+24 years 10 months
+400.00            1.7300            6.8010E-32            3.231800879778703e+23 years 4 months
+410.00            1.7000            8.2319E-31            2.6700304553689636e+22 years 11 months
+420.00            1.6700            8.8543E-30            2.4823724995285536e+21 years 1 months
+430.00            1.6400            8.5329E-29            2.575861004996672e+20 years 5 months
+440.00            1.6100            7.4231E-28            2.9609658416306274e+19 years 9 months
+450.00            1.5800            5.8692E-27            3.744894688484213e+18 years 3 months
+460.00            1.5600            4.2441E-26            5.178909643359534e+17 years 2 months
+470.00            1.5300            2.8227E-25            7.786762950211968e+16 years 10 months
+480.00            1.5100            1.7358E-24            1.2662777242720764e+16 years 9 months
+490.00            1.4900            9.9162E-24            2216526536349124.0 years 12 days
+500.00            1.4700            5.2862E-23            415789922543753.0 years 8 months
+510.00            1.4500            2.6403E-22            83246759836806.0 years 9 months
+520.00            1.4300            1.2402E-21            17722464567945.0 years 11 months
+530.00            1.4200            5.4977E-21            3997958334713.0 years 5 months
+540.00            1.4000            2.3073E-20            952610330635.0 years 4 months
+550.00            1.3900            9.1951E-20            239035323386.0 years 2 months
+560.00            1.3700            3.4893E-19            62990909906.0 years 11 months
+570.00            1.3600            1.2641E-18            17387860120.0 years 6 months
+580.00            1.3500            4.3822E-18            5015650536.0 years 8 months
+590.00            1.3400            1.4570E-17            1508523682.0 years 11 days
+600.00            1.3300            4.6559E-17            472080592.0 years 2 months
+```
 
 
 ## 계산 디테일 링크
 
 [atropisomer의 interconversion](123)
 
-[ClFHP의 configurational inversion](123)
+[ClFHP의 pyramidal inversion](123)
+
+[NHFCl의 pyramidal inversion](123)
 
