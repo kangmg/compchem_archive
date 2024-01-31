@@ -44,12 +44,16 @@ $$
 
 1. 위에서 언급한 atropisomer의 interconversion 시스템
 
-2. 
+2. ClFHP 분자의 configurational inversion
 
 <br/>
 
-
 ## 계산 결과 요약 
-1. 
+
 
 ## 계산 디테일 링크
+
+[atropisomer의 interconversion](123)
+
+[ClFHP의 configurational inversion](123)
+
