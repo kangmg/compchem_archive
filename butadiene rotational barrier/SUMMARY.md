@@ -11,6 +11,7 @@ Butadiene의 rotational barrier를 보면, cis-butadiene에서 local minima가 �
 |계산_종류|프로그램|
 |:-:|:-:|
 |GKS_EDA|XEDA 1.0 (GAMESS-US)|
+|sobEDA|gaussian/sobEDA code|
 |Coordinate scan|PSI4|
 |인풋 생성 & 데이터 처리|EDA-support (beta)|
 |ASA 계산| <a href="https://github.com/dsvatunek/autoDIAS">autoDIAS 코드</a>, PSI4|
@@ -67,6 +68,9 @@ $E_{int}$ 자체에 local minima가 없기에 EDA 계산이 local minima에 대�
 
 ![all](https://github.com/kangmg/compchem_archive/assets/59556369/345bb482-ea0c-412c-b16c-6b0df3e292bf)
 
+위에 계산들은 XEDA로 한 계산들이고 sobEDA로도 frozen dihedral rotation에 대한 계산을 동등하게 수행해보았다. 역시 같은 결과를 얻을 수 있다.
+
+![Figure](https://github.com/kangmg/compchem_archive/assets/59556369/6be794e8-f9bb-4b80-bf2e-f36a69f07182)
 
 <br/>
 
@@ -86,6 +90,7 @@ Rotational barrier와 reaction coordinates는 PSI4 프로그램을 이용하여 
 |SI/images/*.png|계산 결과 파일|
 |SI/relaxed_scan_ASA.inp|ASA input 파일|
 |SI/relaxed_scan_ASA.txt|ASA output 파일|
+|SI/sobEDA_output.zip|sobEDA input 및 output 파일|
 
 <br/>
 
