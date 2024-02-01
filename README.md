@@ -17,6 +17,7 @@
 ## 사용한 프로그램
 * PSI4
 * GAMESS-US / XEDA 1.0
+* sobEDA
 * autoDIAS
 * easyTUN & easyRATE
 * Orac5
